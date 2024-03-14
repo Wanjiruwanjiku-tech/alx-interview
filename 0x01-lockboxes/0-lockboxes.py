@@ -11,26 +11,25 @@ def canUnlockAll(boxes):
     Returns:
         bool: True if all boxes can be opened, else False.
     """
-    num_boxes = len(boxes)
-    visited = [False] * num_boxes
-    visited[0] = True  # The first box is initially unlocked
-    stack = [0]  # Initialize a stack with the first box
+    length = len(boxes)
+    keys = set()
+    opened_boxes = []
+    i = 0
 
-    while stack:
-        current_box = stack.pop()
-        for key in boxes[current_box]:
-            if 0 <= key < num_boxes and not visited[key]:
-                visited[key] = True
-                stack.append(key)
+    while i < length:
+        oldi = i
+        opened_boxes.append(i)
+        keys.update(boxes[i])
+        for key in keys:
+            if key != 0 and key < length and key not in opened_boxes:
+                i = key
+                break
+        if oldi != i:
+            continue
+        else:
+            break
 
-    return all(visited)
-
-# Example usage
-boxes1 = [[1], [2], [3], [4], []]
-print(canUnlockAll(boxes1))  # Output: True
-
-boxes2 = [[1, 4, 6], [2], [0, 4, 1], [5, 6, 2], [3], [4, 1], [6]]
-print(canUnlockAll(boxes2))  # Output: True
-
-boxes3 = [[1, 4], [2], [0, 4, 1], [3], [], [4, 1], [5, 6]]
-print(canUnlockAll(boxes3))  # Output: False
+    for i in range(length):
+        if i not in opened_boxes and i != 0:
+            return False
+    return True
