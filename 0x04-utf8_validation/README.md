@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 0x04. UTF-8 Validation
 # Algorithm
 # Python
@@ -66,6 +67,19 @@ A character in UTF-8 can be 1 to 4 bytes long
 The data set can contain multiple characters
 The data will be represented by a list of integers
 Each integer represents 1 byte of data, therefore you only need to handle the 8 least significant bits of each integer
+=======
+# 0. UTF-8 Validation
+## mandatory
+
+- Write a method that determines if a given data set represents a valid UTF-8 encoding.
+
+- Prototype: def validUTF8(data)
+- Return: True if data is a valid UTF-8 encoding, else return False
+- A character in UTF-8 can be 1 to 4 bytes long
+- The data set can contain multiple characters
+- The data will be represented by a list of integers
+- Each integer represents 1 byte of data, therefore you only need to handle the 8 least significant bits of each integer
+>>>>>>> 09d38a5415b1696ab2a568b6bcd928c65f67fddb
 
 ```carrie@ubuntu:~/0x04-utf8_validation$ cat 0-main.py
 #!/usr/bin/python3
@@ -89,6 +103,7 @@ carrie@ubuntu:~/0x04-utf8_validation$ ./0-main.py
 True
 True
 False
+<<<<<<< HEAD
 carrie@ubuntu:~/0x04-utf8_validation$
 ```
 ### Repo:
@@ -96,3 +111,12 @@ carrie@ubuntu:~/0x04-utf8_validation$
 #### GitHub repository: alx-interview
 #### Directory: 0x04-utf8_validation
 #### File: 0-validate_utf8.py
+=======
+carrie@ubuntu:~/0x04-utf8_validation$```
+
+### Repo:
+
+- GitHub repository: alx-interview
+- Directory: 0x04-utf8_validation
+- File: 0-validate_utf8.py
+>>>>>>> 09d38a5415b1696ab2a568b6bcd928c65f67fddb
